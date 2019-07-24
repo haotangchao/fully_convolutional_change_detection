@@ -15,12 +15,12 @@ class Unet(nn.Module):
 
         self.input_nbr = input_nbr
 
-        self.conv11 = nn.Conv2d(input_nbr, 16, kernel_size=3, padding=1)
-        self.bn11 = nn.BatchNorm2d(16)
-        self.do11 = nn.Dropout2d(p=0.2)
-        self.conv12 = nn.Conv2d(16, 16, kernel_size=3, padding=1)
-        self.bn12 = nn.BatchNorm2d(16)
-        self.do12 = nn.Dropout2d(p=0.2)
+        self.conv11 = nn.Conv2d(input_nbr, 16, kernel_size=3, padding=1)        # 3x3 conv layer
+        self.bn11 = nn.BatchNorm2d(16)                                          # BatchNormalization layer, 16 means the number of channels
+        self.do11 = nn.Dropout2d(p=0.2)                                         # Dropout layer, p means the probability of an element to be zeroed
+        self.conv12 = nn.Conv2d(16, 16, kernel_size=3, padding=1)               # 3x3 conv layer
+        self.bn12 = nn.BatchNorm2d(16)                                          # BatchNormalization layer
+        self.do12 = nn.Dropout2d(p=0.2)                                         # Dropout layer
 
         self.conv21 = nn.Conv2d(16, 32, kernel_size=3, padding=1)
         self.bn21 = nn.BatchNorm2d(32)
