@@ -49,7 +49,6 @@ class Unet(nn.Module):
         self.bn43 = nn.BatchNorm2d(128)
         self.do43 = nn.Dropout2d(p=0.2)
 
-
         self.upconv4 = nn.ConvTranspose2d(128, 128, kernel_size=3, padding=1, stride=2, output_padding=1)
 
         self.conv43d = nn.ConvTranspose2d(256, 128, kernel_size=3, padding=1)
